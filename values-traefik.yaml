@@ -1,0 +1,8 @@
+deployment:
+  kind: DaemonSet
+ingressRoute:
+  enabled: true
+providers:
+  kubernetesIngress:
+    namespaces:
+      - "prod"

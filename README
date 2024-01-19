@@ -1,0 +1,21 @@
+To start:
+
+add "127.0.0.1 test.prod" to /etc/hosts
+
+minikube start
+
+helm install mywebapp-release-prod nginx-chart/ --values nginx-chart/values-prod.yaml
+
+helm repo add traefik https://helm.traefik.io/traefik
+helm repo update
+helm install traefik traefik/traefik
+helm install traefik traefik/traefik --namespace=traefik --values=values-traefik.yaml
+
+minikube tunnel
+
+
+http://test.prod should now be accessible
+
+
+Created multiple values to demonstrate the benefits of using helm templates.
+Dockerfile is not the original since i've deleted the original.

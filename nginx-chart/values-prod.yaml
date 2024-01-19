@@ -1,0 +1,11 @@
+namespace: prod
+storageName: storage
+appName: myhelmapp
+
+port: 8080
+
+image:
+  name: albua/kube_project
+  tag: latest
+
+
